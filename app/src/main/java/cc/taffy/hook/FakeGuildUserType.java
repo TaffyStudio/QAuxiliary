@@ -44,7 +44,7 @@ public final class FakeGuildUserType extends CommonSwitchFunctionHook {
 
     @Override
     public String getDescription() {
-        return "开启后可以查看频道人数，但将无法退出频道(只显示解散频道,但点了也没用)。";
+        return "开启后可以查看频道具体人数，但将无法退出频道(只显示解散频道,但点了也没用)。";
     }
 
     @Override

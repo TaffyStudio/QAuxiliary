@@ -57,7 +57,8 @@ val isNativeFullDebugMode = false
 val currentBuildUuid = UUID.randomUUID().toString()
 println("Current build ID is $currentBuildUuid")
 
-val ccacheExecutablePath = Common.findInPath("ccache")
+//val ccacheExecutablePath = Common.findInPath("ccache")
+val ccacheExecutablePath = "D:\\Desktop\\Tools\\File\\ccache-4.10.2-windows-x86_64\\ccache.exe"
 
 if (ccacheExecutablePath != null) {
     println("Found ccache at $ccacheExecutablePath")

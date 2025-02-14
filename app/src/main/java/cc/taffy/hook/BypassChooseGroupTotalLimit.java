@@ -23,12 +23,14 @@ package cc.taffy.hook;
 
 import static io.github.qauxv.util.HostInfo.requireMaxQQVersion;
 import static io.github.qauxv.util.HostInfo.requireMinQQVersion;
+import static io.github.qauxv.util.HostInfo.requireRangeVersion;
 
 import cc.ioctl.util.HookUtils;
 import io.github.qauxv.base.annotation.FunctionHookEntry;
 import io.github.qauxv.base.annotation.UiItemAgentEntry;
 import io.github.qauxv.dsl.FunctionEntryRouter;
 import io.github.qauxv.hook.CommonSwitchFunctionHook;
+import io.github.qauxv.util.HostInfo;
 import io.github.qauxv.util.Initiator;
 import io.github.qauxv.util.QQVersion;
 import java.lang.reflect.Field;
@@ -85,7 +87,7 @@ public final class BypassChooseGroupTotalLimit extends CommonSwitchFunctionHook 
                     android.view.ViewGroup.class,
                     android.os.Bundle.class);
 
-            Field TroopMaxCount = clazz.getDeclaredField(requireMinQQVersion(QQVersion.QQ_9_1_30)?"W":"f0");
+            Field TroopMaxCount = clazz.getDeclaredField(HostInfo.requireRangeQQVersion(QQVersion.QQ_9_1_30,QQVersion.QQ_9_1_35)?"W":"f0");
             TroopMaxCount.setAccessible(true);
 
             HookUtils.hookAfterIfEnabled(this, onCreateViewMethod, param -> {
